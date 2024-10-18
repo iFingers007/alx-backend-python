@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+''' execute multiple coroutines at the same time with async'''
 import asyncio
 from typing import List
 
@@ -19,7 +19,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
 
     for i in range(1, len(delays)):
         key = delays[i]
-        j = i -1
+        j = i - 1
         while j >= 0 and key < delays[j]:
             delays[j + 1] = delays[j]
             j -= 1
